@@ -1,31 +1,45 @@
 #pragma once
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <math.h>
 
 template <class T>
-class MiVector2{
+class MiVector {
 public:
 	T x;
 	T y;
-	/*
-	MiVector2(){
-		x = 0;
-		y = 0;
+	T z;
+
+	MiVector(T x, T y, T z) {
+		x = x;
+		y = y;
+		z = z;
 	}
-	MiVector2(T _x, T _y){
-		x = _x;
-		y = _y;
+	T SumaVectorial(MiVector<T> vec2) {
+		MiVector<T> sum(MiVector<T> v);
 	}
-	SumaVectorial() {
-		return x + y;
+	T ProductoPunto(MiVector<T> vec2) {
+		return x *  vec2.x + y * vec2.y + z * vec2.z;
 	}
-	ProductoPunto() {
-		return x * y;
+	T ProductoCruz(MiVector<T> vec2) {
+		vec2 c;
+		c.x = a.y * b.z - a.z * b.y;
+		c.y = a.z * b.x - a.x * b.z;
+		c.z = a.x * b.y - a.y * b.x;
+		return c;
 	}
-	ProductoCruz() {
+	T SqrMagnitude(MiVector<T> vec2) {
+		vec2 c;
+		c.x = x * 2;
+		c.y = y * 2;
+		c.z = z * 2;
 		return;
-	}*/
-	//retorna la londitud del vetor sin sacar raiz cuadrada
-	T sqrMagnitude(){
-		return x * x + y * y;
+	}
+	std::string ToString() {
+		std::ostringstream ss;
+		ss << "(" << x << "," << y << "," << z << ")";
+		return ss.str();
 	}
 
 };
